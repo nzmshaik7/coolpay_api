@@ -1,0 +1,9 @@
+<p> Add a new Recipient </p>
+
+<form action='/recipients/add_recipient' method='post'>
+      <label for='recipient'>Recipient Name
+        <input type='text' name='recipient' id='recipient' required='true'/>
+      </label>
+      <input type='submit' value='Add Recipient'  />
+</form>
+<%= link_to 'List of recipients', recipients_path %>

@@ -1,0 +1,31 @@
+<p> Add a payment </p>
+
+<form action='/recipients/make_payment' method='post'>
+    <label for="recipient">Recipient Name</label>
+    <select id="recipient" name="recipient" required>
+	<option value=""> Select a recipient </option>
+	<% @recipients.each do |r| %>
+	    <option value="<%=  r["id"] %>" > <%= r["name"] %> </option>
+        <% end %> 
+    </select>
+
+    <label for='amount'>Amount
+        <input type='text' name='amount' id='amount' required: true/>
+    </label>
+    <label for='currency'>Currency </label>
+<% if false %>
+	<input type='text' name='currency' id='currency'/>
+<% end %>
+    <select id="currency" name="currency" required>
+	<option value=""> Select Currency </option>
+	<option value="USD"> USD </option>
+	<option value="EUR"> EUR </option>
+	<option value="INR"> INR </option>
+	<option value="INR"> CAD </option>
+
+    </select>
+    
+
+      <input type='submit' value='Make Payment'  />
+    </form>
+<%= link_to 'List of recipients', recipients_path %>

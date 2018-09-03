@@ -1,0 +1,21 @@
+<h1>Listing Recipients</h1>
+
+<table>
+  <tr>
+    <th>Recipient Name</th>
+    <th>Recipient ID</th>
+  </tr>
+
+<% @recipients.each do |recipient| %>
+  <tr>
+    <td><%= recipient["name"] %></td>
+    <td><%= recipient["id"] %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to('Add a Recipient', new_recipient_path) %>
+<%= link_to('Make a Payment', '/recipients/add_payment') %>
+<%= link_to('Verify a Payment', '/recipients/get_payments') %>

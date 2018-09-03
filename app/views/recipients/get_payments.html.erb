@@ -1,0 +1,16 @@
+<h2> Select Payment ID </h2>
+
+<form action='/recipients/verify_payment' method='post'>
+      <label for="payment_id">Payment ID </label>
+      <select id="payment_id" name="payment_id" required>
+	<option value=""> Select a payment </option>
+	<% @payments.each do |p| %>
+	    <option value="<%=  p["id"] %>" > <%= p["id"] %> </option>
+        <% end %> 
+    </select>
+
+      <input type='submit' value='Select Payment ID'  />
+    </form>
+
+<%= link_to 'List of recipients', recipients_path %>
+<%= link_to 'Home', 'static/home' %>
